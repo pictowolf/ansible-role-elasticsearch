@@ -30,6 +30,11 @@
     src: elasticsearch.yml.j2
     dest: /etc/elasticsearch/elasticsearch.yml
 
+- name: Set jvm options
+  template:
+    src: jvm.options.j2
+    dest: /etc/elasticsearch/jvm.options
+
 - name: enable Elasticsearch and start the service
   systemd:
     name: elasticsearch

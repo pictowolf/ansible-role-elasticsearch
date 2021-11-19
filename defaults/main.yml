@@ -6,3 +6,5 @@ es_data_path: /var/lib/elasticsearch
 es_log_path: /var/log/elasticsearch
 es_node_fqdn: 192.168.1.143 # use DNS
 es_port: 9200
+es_xms: 512m
+es_xmx: 512m
