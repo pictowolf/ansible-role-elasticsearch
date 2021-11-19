@@ -13,10 +13,22 @@
     gpgkey: https://artifacts.elastic.co/GPG-KEY-elasticsearch
     enabled: yes
 
+- name: Open 9200/tcp in firewalld
+  firewalld:
+    port: 9200/tcp
+    permanent: true
+    state: enabled
+    immediate: true
+
 - name: Install ElasticSearch 
   yum:
     name: "elasticsearch-{{ es_version }}.x86_64"
     state: present
+
+- name: Set ElasticSearch.yml
+  template:
+    src: elasticsearch.yml.j2
+    dest: /etc/elasticsearch/elasticsearch.yml
 
 - name: enable Elasticsearch and start the service
   systemd:
