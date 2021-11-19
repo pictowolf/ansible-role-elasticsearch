@@ -40,3 +40,32 @@
     name: elasticsearch
     enabled: yes
     state: started
+
+- name: Install pyhton-pip for the expect command
+  yum:
+    name: python-pip
+    state: present
+
+- name: Install pexpect
+  pip:
+    name: pexpect
+
+- name: See if elastic-passwords.txt already exists
+  stat:
+    path: /root/elastic-passwords.txt
+  register: elastic_passwords_file
+
+- name: Generate random Elastic passwords
+  expect:
+    command: /usr/share/elasticsearch/bin/elasticsearch-setup-passwords auto
+    responses:
+      (?i)N]: y
+    creates: /root/elastic-passwords.txt
+  register: elastic_passwords_out
+
+- name: Copy generated passwords to file
+  copy:
+    content: "{{ elastic_passwords_out }}"
+    dest: "/root/elastic-passwords.txt"
+  delegate_to: localhost
+  when: not elastic_passwords_file.stat.exists

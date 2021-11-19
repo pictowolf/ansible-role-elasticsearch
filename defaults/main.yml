@@ -8,3 +8,4 @@ es_node_fqdn: 192.168.1.143 # use DNS
 es_port: 9200
 es_xms: 512m
 es_xmx: 512m
+es_xpack_enabled: true

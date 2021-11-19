@@ -80,3 +80,7 @@ discovery.seed_hosts: [{{ es_node_fqdn }}]
 # Require explicit names when deleting indices:
 #
 #action.destructive_requires_name: true
+#
+# ---------------------------------- Security -----------------------------------
+xpack.security.enabled: {{ es_xpack_enabled }}
+discovery.type: single-node

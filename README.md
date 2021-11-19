@@ -1,2 +1,11 @@
 # ansible-role-elasticsearch
- Installed ElasticSearch on Centos
+ Install ElasticSearch on CentOS with basic auth enabled.
+
+## Example playbook
+```
+---
+- hosts: all
+  roles:
+    - role: ansible-role-elasticsearch
+```
+
