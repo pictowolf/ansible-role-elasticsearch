@@ -9,3 +9,7 @@ es_port: 9200
 es_xms: 512m
 es_xmx: 512m
 es_xpack_enabled: true
+es_tls_enabled: false
+es_tls_cert: /etc/elasticsearch/certs/dev-node.local.crt
+es_tls_key: /etc/elasticsearch/certs/dev-node.local.key
+es_tls_ca: /etc/elasticsearch/certs/ca.crt
