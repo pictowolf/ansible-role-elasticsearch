@@ -14,3 +14,4 @@
 - [ ] Add multi node support for clustering
 - [ ] Uninstall tag to remove
 - [ ] Upgrade tag to control rollouts?
+- [ ] Include option to change system properties for performance?
