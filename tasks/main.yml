@@ -78,5 +78,6 @@
   copy:
     content: "{{ elastic_passwords_out }}"
     dest: "/root/elastic-passwords.txt"
+    mode: 0600
   delegate_to: localhost
   when: not elastic_passwords_file.stat.exists
