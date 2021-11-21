@@ -10,7 +10,7 @@
 ```
 ## todo list
 - [x] Auto gen passwords on init
-- [ ] Add HTTPS/TLS options
+- [x] Add HTTPS/TLS options
 - [ ] Add multi node support for clustering
 - [ ] Uninstall tag to remove
 - [ ] Upgrade tag to control rollouts?
