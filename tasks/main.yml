@@ -35,12 +35,16 @@
   template:
     src: jvm.options.j2
     dest: /etc/elasticsearch/jvm.options
+  notify: Restart Elasticsearch
 
 - name: Create cert folder
   file:
     path: /etc/elasticsearch/certs
     state: directory
     group: elasticsearch
+
+- name: Flush handlers after config change
+  meta: flush_handlers
 
 - name: enable Elasticsearch and start the service
   systemd:
