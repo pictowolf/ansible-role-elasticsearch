@@ -20,4 +20,4 @@ jobs:
       if: github.event.action == 'opened'
       with:
         project: 'https://github.com/users/pictowolf/projects/1'
-        column_name: 'Needs Review'
+        column_name: 'Todo'
